@@ -1,26 +1,40 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 13:25:23
- * @LastEditTime: 2020-08-04 17:04:25
+ * @LastEditTime: 2020-08-11 15:28:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\steven\src\App.vue
 --> 
 <template>
   <div id="app">
-    <Button>fjdasf</Button>
-    <imageHover />
+    <!-- <Button>fjdasf</Button>
+    <imageHover /> -->
+    <headerBar>
+      fhdasjfhasjk
+    </headerBar>
+    <arrows />
+    <ribbon >
+      asdfhjkash
+    </ribbon>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import imageHover from './views/imageHover/imageHover.vue'
+import headerBar from './views/headerBar/headerBar.vue'
+import arrows from './views/arrows/arrows.vue'
+import ribbon from './views/ribbon/ribbon.vue'
+
 
 export default {
   name: 'App',
   components: {
-    imageHover
+    imageHover,
+    headerBar,
+    arrows,
+    ribbon
   }
 }
 </script>

@@ -1,13 +1,13 @@
 <!--
  * @Author: your name
  * @Date: 2020-08-04 16:03:42
- * @LastEditTime: 2020-08-04 17:04:42
+ * @LastEditTime: 2020-08-10 10:30:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\npm\src\views\imageHover\imageHover.vue
 -->
 <template>
-  <div>
+  <div class="imageHover">
     <div style="max-width:1366px;margin:0 auto;">
       <div
         class="photo_item"
@@ -16,7 +16,7 @@
         @mouseleave="(event)=>imgEventHandle(event,false)"
       >
         <div class="photo_mask"></div>
-        <img src="http://photo.tuchong.com/2732846/ft640/20811104.webp" />
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596604739479&di=262e31b19963c9e12b7af1a1c1a0c95e&imgtype=0&src=http%3A%2F%2Fa2.att.hudong.com%2F36%2F48%2F19300001357258133412489354717.jpg" />
       </div>
     </div>
   </div>
@@ -59,6 +59,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.imageHover{
+  font-size: 0;
+  display: inline-block;
+}
 .photo_item {
   position: relative;
   break-inside: avoid;
