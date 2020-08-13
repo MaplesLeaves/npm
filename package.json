@@ -6,7 +6,7 @@
     "build": "vue-cli-service build",
     "build-bundle": "vue-cli-service build --target lib --name maple-leaves ./src/views/index.js"
   },
-  "main":"./dist/maple-leaves.common.js",
+  "main": "./dist/maple-leaves.common.js",
   "files": [
     "dist/*",
     "src/*",

@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-08-11 14:45:17
- * @LastEditTime: 2020-08-11 15:10:54
+ * @LastEditTime: 2020-08-13 17:15:13
  * @LastEditors: Please set LastEditors
  * @Description: 箭头模板
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\npm\src\views\arrows\arrows.vue
 -->
 <template>
   <div class="arrows">
-    <span class="arrowsList" :style="{color: color}" :class="{item:item}" v-for="item in num" :key="item">距离结束还有10天</span>
+    <span class="arrowsList" :style="{color: color}" :class="{item:item}" v-for="item in data" :key="item">距离结束还有10天</span>
   </div>
 </template>
 
@@ -18,7 +18,6 @@ export default {
   data() {
     return {
       num: 10,
-      
     };
   },
   props: {

@@ -1,20 +1,21 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 13:25:23
- * @LastEditTime: 2020-08-11 15:28:57
+ * @LastEditTime: 2020-08-13 15:46:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\steven\src\App.vue
 --> 
 <template>
   <div id="app">
-    <!-- <Button>fjdasf</Button>
-    <imageHover /> -->
-    <headerBar>
-      fhdasjfhasjk
+    <Button>fjdasf</Button>
+    <imageHover>
+      <span>safhdsa</span>
+    </imageHover>
+    <headerBar leftText='fdjasklas11' rightText='fdasfda22'>
     </headerBar>
-    <arrows />
-    <ribbon >
+    <arrows  color="yellow" backCol="green" :data='list'/>
+    <ribbon color="yellow" backCol="green">
       asdfhjkash
     </ribbon>
   </div>
@@ -35,6 +36,15 @@ export default {
     headerBar,
     arrows,
     ribbon
+  },
+  data(){
+    return {
+      list: [
+        'zhang',
+        'das',
+        'dasfa'
+      ]
+    }
   }
 }
 </script>

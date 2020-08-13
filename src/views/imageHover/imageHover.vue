@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-08-04 16:03:42
- * @LastEditTime: 2020-08-10 10:30:55
+ * @LastEditTime: 2020-08-13 16:19:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\npm\src\views\imageHover\imageHover.vue
@@ -11,12 +11,12 @@
     <div style="max-width:1366px;margin:0 auto;">
       <div
         class="photo_item"
-        style="max-width:200px;"
+        
         @mouseenter="(event)=>imgEventHandle(event,true)"
         @mouseleave="(event)=>imgEventHandle(event,false)"
       >
         <div class="photo_mask"></div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596604739479&di=262e31b19963c9e12b7af1a1c1a0c95e&imgtype=0&src=http%3A%2F%2Fa2.att.hudong.com%2F36%2F48%2F19300001357258133412489354717.jpg" />
+        <img :src="src" />
       </div>
     </div>
   </div>
@@ -25,6 +25,12 @@
 <script>
 export default {
   name: "imageHover",
+  props:{
+    src: {
+      type: String,
+      default: () => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596604739479&di=262e31b19963c9e12b7af1a1c1a0c95e&imgtype=0&src=http%3A%2F%2Fa2.att.hudong.com%2F36%2F48%2F19300001357258133412489354717.jpg'
+    }
+  },
   methods: {
     imgEventHandle(event, is_enter) {
       let direction_index;
@@ -64,6 +70,7 @@ export default {
   display: inline-block;
 }
 .photo_item {
+  display: inline-block;
   position: relative;
   break-inside: avoid;
   margin: 0 auto;

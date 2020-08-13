@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-08-11 15:13:17
- * @LastEditTime: 2020-08-11 15:29:40
+ * @LastEditTime: 2020-08-13 15:37:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\npm\src\views\ribbon\ribbon.vue
@@ -75,12 +75,12 @@ export default {
 
 .ribbon span::before {
   left: 0;
-  border-color: #972f22 #972f22 transparent transparent;
+  border-color: var(--ribbon) var(--ribbon) transparent transparent;
 }
 
 .ribbon span::after {
   right: 0;
-  border-color: #972f22 transparent transparent #972f22;
+  border-color: var(--ribbon) transparent transparent var(--ribbon);
 }
 
 .ribbon::before,
