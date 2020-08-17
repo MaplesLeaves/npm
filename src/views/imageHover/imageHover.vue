@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-08-04 16:03:42
- * @LastEditTime: 2020-08-13 16:19:20
+ * @LastEditTime: 2020-08-13 17:32:25
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\npm\src\views\imageHover\imageHover.vue
@@ -16,7 +16,11 @@
         @mouseleave="(event)=>imgEventHandle(event,false)"
       >
         <div class="photo_mask"></div>
-        <img :src="src" />
+        
+        
+        <slot>
+          <img :src="src" />
+        </slot>
       </div>
     </div>
   </div>
@@ -66,8 +70,8 @@ export default {
 
 <style lang="less" scoped>
 .imageHover{
-  font-size: 0;
   display: inline-block;
+  font-size: 0;
 }
 .photo_item {
   display: inline-block;
@@ -83,6 +87,7 @@ export default {
   }
   img {
     width: 100%;
+    
   }
   .photo_mask {
     position: absolute;
