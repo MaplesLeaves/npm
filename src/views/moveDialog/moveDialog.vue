@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-08-14 10:58:59
- * @LastEditTime: 2020-08-14 19:45:58
+ * @LastEditTime: 2020-08-17 09:59:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\npm\src\views\moveDialog\moveDialog.vue
@@ -75,10 +75,9 @@ export default {
           } else {
             vnode.top = clientY + "px";
           }
-          
         };
-        document.onmouseup = () => (document.onmousemove = null);
       };
+      document.onmouseup = () => (document.onmousemove = null);
     },
   },
   methods: {

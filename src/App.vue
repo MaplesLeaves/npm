@@ -1,16 +1,15 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 13:25:23
- * @LastEditTime: 2020-08-14 16:00:42
+ * @LastEditTime: 2020-08-17 17:05:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\steven\src\App.vue
 --> 
 <template>
   <div id="app">
-    <Button>fjdasf</Button>
+    <!-- <Button>fjdasf</Button>
     <imageHover >
-      <!-- <span style="font-size: 16px">safhdsa</span> -->
     </imageHover>
     <headerBar leftText='fdjasklas11' rightText='fdasfda22'>
     </headerBar>
@@ -22,39 +21,54 @@
       fdasgdhfasgfafas
       <br>
       ahfjkdashfjkas
-    </moveDialog>
+    </moveDialog>-->
+    <special-button type="neon" text="测试1" color='red'></special-button>
+    <special-button type="draw" text="测试2" ></special-button>
+    <special-button type="circle">
+    </special-button>
+    <special-button
+      type="frozen"
+      text="测试3"
+      :hoverCol="{
+        startCol: 'red',
+        endCol: 'green',
+        shadowCol: 'yellow'
+      }"
+    ></special-button>
+    <!-- <light-button>
+    </light-button>-->
+    <!-- <draw-button color='skyblue'  />
+    <frozen-button />-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import imageHover from './views/imageHover/imageHover.vue'
-import headerBar from './views/headerBar/headerBar.vue'
-import arrows from './views/arrows/arrows.vue'
-import ribbon from './views/ribbon/ribbon.vue'
-import moveDialog from './views/moveDialog/moveDialog.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import imageHover from "./views/imageHover/imageHover.vue";
+import headerBar from "./views/headerBar/headerBar.vue";
+import arrows from "./views/arrows/arrows.vue";
+import ribbon from "./views/ribbon/ribbon.vue";
+import moveDialog from "./views/moveDialog/moveDialog.vue";
+import specialButton from "./views/specialButton/specialButton.vue";
 
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     imageHover,
     headerBar,
     arrows,
     ribbon,
-    moveDialog
+    moveDialog,
+    specialButton
   },
-  data(){
+  data() {
     return {
       show: true,
-      list: [
-        'zhang',
-        'das',
-        'dasfa'
-      ]
-    }
-  }
-}
+      list: ["zhang", "das", "dasfa"],
+    };
+  },
+};
 </script>
 
 <style lang="less">
@@ -65,5 +79,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  
 }
 </style>
