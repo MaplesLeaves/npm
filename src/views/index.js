@@ -1,19 +1,23 @@
 /*
  * @Author: your name
  * @Date: 2020-07-31 13:35:32
- * @LastEditTime: 2020-07-31 14:04:43
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-06-04 12:10:30
+ * @LastEditors:  
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\steven\src\views\index.js
  */ 
 import Vue from 'vue'
-import Button from './button/Button.vue'
-const Components = [
-    Button
+// import Button from './button/Button.vue'
+import Button from 'ant-design-vue/lib/button';
+import {Divider} from 'ant-design-vue'
+import './../button.less'
+
+const list = [
+    Button,
+    Divider
 ]
 const install = (Vue)=>{
-    console.error(Components);
-    Components.forEach((component)=>{
+    list.forEach((component)=>{
         Vue.component(component.name, component )
     })
 }
