@@ -4,7 +4,7 @@
  * @Author: MapleLeaves
  * @Date: 2021-07-01 17:57:59
  * @LastEditors:  
- * @LastEditTime: 2021-07-05 16:51:58
+ * @LastEditTime: 2021-07-06 14:44:43
 -->
 <template>
   <div class="itemTree">
@@ -12,12 +12,14 @@
          :class=" treeVal.name === name ? 'active' : ''"
          :ref=" treeVal.name === name ? 'active' : ''">{{treeVal.name}} <span v-if="treeVal.child"
             @click="handClick">></span></div>
+            <el-collapse-transition>
     <div v-show="treeVal.child && isShow">
       <menu-tree :list='treeVal.child'
                  @showItem='showItem'
                  :name='name'></menu-tree>
 
     </div>
+    </el-collapse-transition>
   </div>
 </template>
 
@@ -78,9 +80,14 @@ export default {
 </script>
 <style lang='less'>
 .itemTree {
-  margin-bottom: 10px;
+  width: 100%;
   .itemTitle {
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 10px;
+    background: skyblue;
+    border-bottom: 1px solid white;
   }
 }
 </style>

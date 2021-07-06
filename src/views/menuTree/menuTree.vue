@@ -4,7 +4,7 @@
  * @Author: MapleLeaves
  * @Date: 2021-07-01 17:43:25
  * @LastEditors:  
- * @LastEditTime: 2021-07-02 15:21:19
+ * @LastEditTime: 2021-07-06 14:29:19
 -->
 <template>
   <div class="meuTree">
@@ -67,5 +67,7 @@ export default {
 <style lang='less'>
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 </style>

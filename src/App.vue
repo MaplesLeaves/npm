@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 13:25:23
- * @LastEditTime: 2021-07-05 16:46:58
+ * @LastEditTime: 2021-07-06 14:27:05
  * @LastEditors:  
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\steven\src\App.vue
@@ -198,8 +198,8 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   .list{
-    height: 150px;
-    overflow-y: auto;
+    // height: 150px;
+    // overflow-y: auto;
   }
 }
 </style>
