@@ -4,14 +4,17 @@
  * @Author: MapleLeaves
  * @Date: 2021-07-01 17:57:59
  * @LastEditors:  
- * @LastEditTime: 2021-07-06 14:44:43
+ * @LastEditTime: 2021-07-06 17:11:29
 -->
 <template>
   <div class="itemTree">
     <div class="itemTitle"
+    @click="handClick"
          :class=" treeVal.name === name ? 'active' : ''"
-         :ref=" treeVal.name === name ? 'active' : ''">{{treeVal.name}} <span v-if="treeVal.child"
-            @click="handClick">></span></div>
+         :ref=" treeVal.name === name ? 'active' : ''">
+         {{treeVal.name}} 
+            <i v-if="treeVal.child" :class="!isShow ? 'rightActive': ''" class="el-icon-arrow-down direction"></i>
+            </div>
             <el-collapse-transition>
     <div v-show="treeVal.child && isShow">
       <menu-tree :list='treeVal.child'
@@ -78,10 +81,11 @@ export default {
   },
 }
 </script>
-<style lang='less'>
+<style lang='less' scoped>
 .itemTree {
   width: 100%;
   .itemTitle {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -89,5 +93,13 @@ export default {
     background: skyblue;
     border-bottom: 1px solid white;
   }
+}
+.rightActive{
+  transform: rotate(-90deg);
+  transition:  all .5s;
+}
+.direction{
+  transition:  all .5s;
+  color: white;
 }
 </style>

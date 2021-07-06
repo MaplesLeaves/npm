@@ -4,7 +4,7 @@
  * @Author: MapleLeaves
  * @Date: 2021-07-01 17:43:25
  * @LastEditors:  
- * @LastEditTime: 2021-07-06 14:29:19
+ * @LastEditTime: 2021-07-06 14:54:12
 -->
 <template>
   <div class="meuTree">
@@ -63,11 +63,19 @@ export default {
   },
 }
 </script>
-
-<style lang='less'>
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+<style lang='less' scoped>
+.meuTree {
+  background: red;
+  width: 100%;
+  box-sizing: border-box;
+  ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+      width: 100%;
+    }
+  }
 }
 </style>
