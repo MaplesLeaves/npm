@@ -4,24 +4,27 @@
  * @Author: MapleLeaves
  * @Date: 2021-07-01 17:57:59
  * @LastEditors:  
- * @LastEditTime: 2021-07-06 17:11:29
+ * @LastEditTime: 2021-07-07 17:32:56
 -->
 <template>
   <div class="itemTree">
     <div class="itemTitle"
-    @click="handClick"
-         :class=" treeVal.name === name ? 'active' : ''"
-         :ref=" treeVal.name === name ? 'active' : ''">
-         {{treeVal.name}} 
-            <i v-if="treeVal.child" :class="!isShow ? 'rightActive': ''" class="el-icon-arrow-down direction"></i>
-            </div>
-            <el-collapse-transition>
-    <div v-show="treeVal.child && isShow">
-      <menu-tree :list='treeVal.child'
-                 @showItem='showItem'
-                 :name='name'></menu-tree>
-
+         @click="handClick"
+         :class="treeVal.name === active ? 'active' : ''"
+         :ref=" treeVal.name === active ? 'active' : ''">
+      {{treeVal.name}}
+      <i v-if="treeVal.child"
+         :class="!isShow ? 'rightActive': ''"
+         class="el-icon-arrow-down direction"></i>
     </div>
+    <el-collapse-transition>
+      <div v-show="treeVal.child && isShow">
+        <menu-tree :list='treeVal.child'
+                   @showItem='showItem'
+                   :activeClick='activeClick'
+                   :active='active'></menu-tree>
+
+      </div>
     </el-collapse-transition>
   </div>
 </template>
@@ -45,13 +48,17 @@ export default {
         return {}
       },
     },
-    name: {
-      type: String,
-      default: '',
+    active: {
+      type: [String || Number],
+      default: null,
+    },
+    activeClick: {
+      type: Function,
+      default: () => {},
     },
   },
   watch: {
-    name: {
+    active: {
       handler(val) {
         let isTrue = this.treeVal.name === val
         if (isTrue) {
@@ -77,6 +84,12 @@ export default {
     },
     handClick() {
       this.isShow = !this.isShow
+
+      if (this.treeVal.child) {
+        this.activeClick('file', this.treeVal)
+      } else {
+        this.activeClick('item', this.treeVal)
+      }
     },
   },
 }
@@ -90,16 +103,27 @@ export default {
     justify-content: space-between;
     width: 100%;
     padding: 10px 10px;
-    background: skyblue;
+    background: rgb(84, 92, 100);
     border-bottom: 1px solid white;
+    color: white;
+    &:hover {
+      background: #303133;
+      color: rgb(255, 208, 75);
+      border-color: rgb(255, 208, 75);
+    }
+  }
+  .active {
+    background: #303133;
+    color: rgb(255, 208, 75);
+    border-color: rgb(255, 208, 75);
   }
 }
-.rightActive{
+.rightActive {
   transform: rotate(-90deg);
-  transition:  all .5s;
+  transition: all 0.5s;
 }
-.direction{
-  transition:  all .5s;
+.direction {
+  transition: all 0.5s;
   color: white;
 }
 </style>

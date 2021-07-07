@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 13:25:23
- * @LastEditTime: 2021-07-06 14:27:05
+ * @LastEditTime: 2021-07-07 17:33:38
  * @LastEditors:  
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\steven\src\App.vue
@@ -42,30 +42,32 @@
     <a-button>
       fadsdfjalk 
     </a-button> -->
-    <input type="text" name="" v-model='val' id="">
+    <input type="text"
+           name=""
+           v-model='val'
+           id="">
     <special-button @click="clickO">
       fdsafa
     </special-button>
+    <test :active.sync="userName" :activeClick='activeClick' :list="data"/>
     <div class="list">
-      <menu-tree :list="data" :name='userName'></menu-tree>
+      
     </div>
-    
+
   </div>
 </template>
 
 <script>
-
-import imageHover from "./views/imageHover/imageHover.vue";
-import headerBar from "./views/headerBar/headerBar.vue";
-import arrows from "./views/arrows/arrows.vue";
-import ribbon from "./views/ribbon/ribbon.vue";
-import moveDialog from "./views/moveDialog/moveDialog.vue";
-import specialButton from "./views/specialButton/specialButton.vue";
-import menuTree from "./views/menuTree/menuTree.vue";
-
+import imageHover from './views/imageHover/imageHover.vue'
+import headerBar from './views/headerBar/headerBar.vue'
+import arrows from './views/arrows/arrows.vue'
+import ribbon from './views/ribbon/ribbon.vue'
+import moveDialog from './views/moveDialog/moveDialog.vue'
+import specialButton from './views/specialButton/specialButton.vue'
+import test from './views/menuTree/test.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     imageHover,
     headerBar,
@@ -73,121 +75,125 @@ export default {
     ribbon,
     moveDialog,
     specialButton,
-    menuTree
+    test,
   },
   data() {
     return {
+      name: 'zhangdan',
       show: true,
-      list: ["zhang", "das", "dasfa"],
+      list: ['zhang', 'das', 'dasfa'],
       userName: 'wangwu',
-      val:'',
-      data:[
+      val: '',
+      data: [
         {
           name: 'zhangsan',
-          child:[
+          child: [
             {
-              name: '里斯'
-            }
-          ]
+              name: '里斯',
+            },
+          ],
         },
         {
           name: 'zhangsan2',
-          child:[
+          child: [
             {
-              name: '里斯2'
-            }
-          ]
+              name: '里斯2',
+            },
+          ],
         },
         {
           name: 'zhangsan3',
-          child:[
+          child: [
             {
               name: '里斯3',
               child: [
                 {
-                  name:'lisi',
-                  child:[
+                  name: 'lisi',
+                  child: [
                     {
-                      name: 'wangwu'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+                      name: 'wangwu',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
           name: 'zhangsan3',
-          child:[
+          child: [
             {
               name: '里斯3',
               child: [
                 {
-                  name:'lisi',
-                  child:[
+                  name: 'lisi',
+                  child: [
                     {
-                      name: 'wangwu'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+                      name: 'wangwu',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
           name: 'zhangsan3',
-          child:[
+          child: [
             {
               name: '里斯3',
               child: [
                 {
-                  name:'lisi',
-                  child:[
+                  name: 'lisi',
+                  child: [
                     {
-                      name: 'wangwu'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+                      name: 'wangwu',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
           name: 'zhangsan3',
-          child:[
+          child: [
             {
               name: '里斯3',
               child: [
                 {
-                  name:'lisi',
-                  child:[
+                  name: 'lisi',
+                  child: [
                     {
-                      name: 'wangwu'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+                      name: 'wangwu',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
           name: 'zhangsan4',
-          child:[
+          child: [
             {
-              name: '里斯4'
-            }
-          ]
-        }
-      ]
-    };
+              name: '里斯4',
+            },
+          ],
+        },
+      ],
+    }
   },
-  methods:{
-    clickO(){
+  methods: {
+    clickO() {
       console.error('fasdf')
       this.userName = this.val
-    }
-  }
-};
+    },
+    activeClick(type, item) {
+      console.error(type, item)
+    },
+  },
+}
 </script>
 <style lang="less">
 #app {
@@ -197,7 +203,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  .list{
+  .list {
     // height: 150px;
     // overflow-y: auto;
   }

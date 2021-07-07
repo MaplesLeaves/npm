@@ -4,7 +4,7 @@
  * @Author: MapleLeaves
  * @Date: 2021-07-01 17:43:25
  * @LastEditors:  
- * @LastEditTime: 2021-07-06 14:54:12
+ * @LastEditTime: 2021-07-07 17:31:18
 -->
 <template>
   <div class="meuTree">
@@ -12,7 +12,8 @@
       <li v-for="(item, index) in list"
           :key="index">
         <itemTree :treeVal="item"
-                  :name='name'
+                  :active='active'
+                  :activeClick='activeClick'
                   @showItem='$emit("showItem")'>
         </itemTree>
       </li>
@@ -37,13 +38,17 @@ export default {
         return []
       },
     },
-    name: {
-      type: String,
-      default: '',
+    active: {
+        type: [String || Number],
+      default: null,
     },
+    activeClick:{
+      type: Function,
+      default:()=>{}
+    }
   },
   watch: {
-    name: {
+    active: {
       handler(val) {
         let isTrue = this.list.some((item) => {
           return item.name === val
