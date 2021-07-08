@@ -4,7 +4,7 @@
  * @Author: MapleLeaves
  * @Date: 2021-07-01 17:57:59
  * @LastEditors:  
- * @LastEditTime: 2021-07-07 17:32:56
+ * @LastEditTime: 2021-07-08 14:54:34
 -->
 <template>
   <div class="itemTree">
@@ -64,12 +64,10 @@ export default {
         if (isTrue) {
           this.$emit('showItem')
           this.$nextTick(() => {
-            console.error(
-              this.$refs.active.scrollIntoView({
-                behavior: 'smooth', // 平滑过渡
-                block: 'start',
-              })
-            )
+            this.$refs.active.scrollIntoView({
+              behavior: 'smooth', // 平滑过渡
+              block: 'start',
+            })
           })
         }
       },

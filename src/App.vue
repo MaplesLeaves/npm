@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 13:25:23
- * @LastEditTime: 2021-07-07 17:33:38
+ * @LastEditTime: 2021-07-08 14:56:16
  * @LastEditors:  
  * @Description: In User Settings Edit
  * @FilePath: \taibaoc:\Users\Lenovo\Desktop\test\steven\src\App.vue
@@ -49,7 +49,7 @@
     <special-button @click="clickO">
       fdsafa
     </special-button>
-    <test :active.sync="userName" :activeClick='activeClick' :list="data"/>
+    <map-menu :active.sync="userName" :activeClick='activeClick' :list="data"/>
     <div class="list">
       
     </div>
@@ -64,7 +64,7 @@ import arrows from './views/arrows/arrows.vue'
 import ribbon from './views/ribbon/ribbon.vue'
 import moveDialog from './views/moveDialog/moveDialog.vue'
 import specialButton from './views/specialButton/specialButton.vue'
-import test from './views/menuTree/test.vue'
+import mapMenu from './views/menuTree/mapMenu.vue'
 
 export default {
   name: 'App',
@@ -75,7 +75,7 @@ export default {
     ribbon,
     moveDialog,
     specialButton,
-    test,
+    mapMenu,
   },
   data() {
     return {
