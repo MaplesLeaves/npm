@@ -8,6 +8,7 @@
 --> 
 <template>
   <div id="app">
+    <!-- 电话费看见爱上福建考试 -->
     <!-- <imageHover >
     </imageHover>
     <headerBar leftText='fdjasklas11' rightText='fdasfda22'>
